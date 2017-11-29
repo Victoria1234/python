@@ -9,12 +9,12 @@ phoneRegex = re.compile(r'''
 \d\d\d   #f irst 3 digits
 -    # separator
 \d\d\d\d    # last 4 digits
-(((ext(\.)?\s) |x    # extension word-part (optional)
+((ext(\.)?\s) |x    # extension word-part (optional)
 (\d{2,5}))? #extensio number-part (optional)
 )
 ''', re.VERBOSE)
 
-# Create a regex for email addresses
+# # Create a regex for email addresses
 emailRegex = re.compile(r'''
 # some.+_thing@(\d{2,5}))?.com
 
@@ -24,12 +24,12 @@ emailRegex = re.compile(r'''
 
 ''', re.VERBOSE)
 
-# Get the text off the clipboard
+# # Get the text off the clipboard
 text = pyperclip.paste()
 
-# Extract the email/phone from this text
+# # Extract the email/phone from this text
 extractedPhone = phoneRegex.findall(text)
-extractedEmail - emailRegex.findall(text)
+extractedEmail = emailRegex.findall(text)
 
 print(extractedPhone)
 print(extractedEmail)
